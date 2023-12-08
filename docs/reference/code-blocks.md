@@ -87,9 +87,7 @@ theme:
     <!-- md:flag experimental -->
 
     If you want to define a slightly different text to be copied to the
-    clipboard, you can use the `data-copy` attribute on the code block. Note
-    that this attribute does not support multiple lines, which is not a
-    limitation of Material for MkDocs, but of the Markdown parser. Example:
+    clipboard, you can use the `data-copy` attribute on the code block. Example:
 
     ```` markdown title="Code block"
     ``` { .sh data-copy="curl https://www.example.com" }
@@ -107,6 +105,23 @@ theme:
     # <!doctype html>
     #   <html>
     # ...
+    ```
+
+    </div>
+
+    Due to restrictions from the Markdown parser, newlines and braces must be
+    HTML-encoded, e.g. `&#10;` and `&#123;`. For example:
+
+    ```` markdown title="Code block"
+    ``` { .c data-copy="int main() &#123;&#10;  return 0;&#10;&#125" }
+    Try copying me for some C code
+    ```
+    ````
+
+    <div class="result" markdown>
+
+    ``` { .c data-copy="int main() &#123;&#10;  return 0;&#10;&#125" }
+    Try copying me for some C code
     ```
 
     </div>
